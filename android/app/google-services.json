@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "717171624414",
+    "project_id": "saferoute0",
+    "storage_bucket": "saferoute0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717171624414:android:558de2f90a2d18455fb54f",
+        "android_client_info": {
+          "package_name": "com.example.safe_route00"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVBG3wtmfXEOZpGaEvX4g6X8pNE2vTWlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
