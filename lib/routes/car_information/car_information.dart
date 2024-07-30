@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 
+
+import '../../data/api_manager.dart';
 import '../utils/app_colors.dart';
 
-class CarInfo extends StatelessWidget {
+class CarInfo extends StatefulWidget {
   static String routeName="car info";
 
+  @override
+  State<CarInfo> createState() => _CarInfoState();
+}
+
+class _CarInfoState extends State<CarInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: Colors.transparent,
@@ -35,39 +42,52 @@ class CarInfo extends StatelessWidget {
             ),
             Expanded(
                 flex: 50,
-                child: Column(
-                  children: [
+                child:FutureBuilder(future: ApiManager2.getCarInformation(),builder: (context, snapshot) {
+                  if(snapshot.connectionState==ConnectionState.waiting){
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
 
-                    getRowOption("Brand", " "),
-                    Divider(
-                      height: 1,
-                      thickness: 0.5,
-                      endIndent: 30,
-                      indent: 30,
-                      color: AppColors.textColor,
-                    ),
-                    getRowOption("Color"," "),
+                  }else if(snapshot.hasError){
+                    return Center(
+                      child: Text("something went wrong"),
+                    );
+                  }
+                  var info=snapshot.data;
+                  return Column(
+                    children: [
 
-                    Divider(
-                      height: 1,
-                      thickness: 0.5,
-                      endIndent: 30,
-                      indent: 30,
-                      color: AppColors.textColor,
-                    ),
-                    getRowOption("Model", " "),
-                    Divider(
-                      height: 1,
-                      thickness: 0.5,
-                      endIndent: 30,
-                      indent: 30,
-                      color: AppColors.textColor,
-                    ),
-                    getRowOption("Version", " "),
+                      getRowOption("Brand", "${info?.brand} "),
+                      Divider(
+                        height: 1,
+                        thickness: 0.5,
+                        endIndent: 30,
+                        indent: 30,
+                        color: AppColors.textColor,
+                      ),
+                      getRowOption("Color"," ${info?.color}"),
+
+                      Divider(
+                        height: 1,
+                        thickness: 0.5,
+                        endIndent: 30,
+                        indent: 30,
+                        color: AppColors.textColor,
+                      ),
+                      getRowOption("Model", " ${info?.model}"),
+                      Divider(
+                        height: 1,
+                        thickness: 0.5,
+                        endIndent: 30,
+                        indent: 30,
+                        color: AppColors.textColor,
+                      ),
+                      getRowOption("Version", " ${info?.version}"),
 
 
-                  ],
-                )
+                    ],
+                  );
+                })
             ),
           ],
         ),

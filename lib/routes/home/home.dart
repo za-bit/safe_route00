@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:safe_route00/routes/home/tabs/control_tab/control_tab.dart';
+
 import 'package:safe_route00/routes/home/tabs/home_tab/home_tab.dart';
 import 'package:safe_route00/routes/home/tabs/maps_tab/maps_tab.dart';
 import 'package:safe_route00/routes/home/tabs/navigation_tab/navigation_tab.dart';
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   int currentTap = 0;
   List<Widget> tabs = [
     HomeTab(),
-    ControlTab(),
+
     TAnimation(),
     MapsTab(),
     SettingsTab(),
@@ -50,8 +50,7 @@ class _HomeState extends State<Home> {
             items: const [
               BottomNavigationBarItem(
                   label: "Home", icon: Icon(Icons.home_filled)),
-              BottomNavigationBarItem(
-                  label: "Control", icon: Icon(Icons.control_point_rounded)),
+
               BottomNavigationBarItem(
                   label: "Navigation", icon: Icon(Icons.assistant_navigation)),
               BottomNavigationBarItem(

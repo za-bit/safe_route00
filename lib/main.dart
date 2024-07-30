@@ -6,6 +6,7 @@ import 'package:safe_route00/routes/home/home.dart';
 import 'package:safe_route00/routes/login/login.dart';
 import 'package:safe_route00/routes/profile/profile.dart';
 import 'package:safe_route00/routes/register/register.dart';
+import 'package:safe_route00/routes/splash/splash_screen.dart';
 
 import 'firebase_options.dart';
 
@@ -22,7 +23,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,10 +34,12 @@ class MyApp extends StatelessWidget {
         Profile.routeName:(_) =>Profile(),
         Login.routeName:(_)=>Login(),
         Register.routeName:(_)=>Register(),
-
+        SplashScreen.routeName:(_) =>SplashScreen(),
 
       },
-      initialRoute: Login.routeName,
+      initialRoute: SplashScreen.routeName,
 
     );
-  }}
+  }
+
+}

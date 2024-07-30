@@ -109,6 +109,8 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 style: TextStyle(color: AppColors.textColor),
+
+                obscureText: true,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * .1,

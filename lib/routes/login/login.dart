@@ -64,6 +64,9 @@ class _LoginState extends State<Login> {
                     borderSide: BorderSide(color: AppColors.textColor),
                   ),
                 ),style: TextStyle(color: AppColors.textColor),
+
+
+                obscureText: true,
               ),
               SizedBox(
                 height: 18,
